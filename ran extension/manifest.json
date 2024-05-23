@@ -1,0 +1,21 @@
+{
+    "name": "Ransomeware detector",
+    "version":"0.1.0",
+    "permissions": [
+    "downloads","activeTab","scripting","webRequest","declarativeNetRequest","storage"
+    ],
+    "description" : "checks the file contains Ransomware or not ",
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[{
+        "matches":["<all_urls>"],
+        "js":["./content.js"]
+    }],
+
+    "action":{
+        "default_title":"Ransomeware Detector",
+        "default_popup":"popup.html"
+    },
+    "manifest_version": 3     
+}
